@@ -4,6 +4,9 @@
   "engines": {
     "node": "16.20.2"
   },
+  "scripts": {
+    "dev": "NODE_ENV=local node index.mjs"
+  },
   "dependencies": {
     "aws-serverless-express": "^3.4.0",
     "cors": "^2.8.5",

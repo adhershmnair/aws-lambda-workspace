@@ -100,6 +100,13 @@ app.get('/jira', async (req, res) => {
 // Create a server instance and pass the Express app to it
 const server = awsServerlessExpress.createServer(app);
 
+// Start the server locally
+if (process.env.NODE_ENV === 'local') {
+  app.listen(port, () => {
+    console.log(`Server is running locally on http://${host}:${port}`);
+  });
+}
+
 // Create the Lambda handler function
 export const handler = (event, context) => {
   // Pass the event and context to the server's proxy method
