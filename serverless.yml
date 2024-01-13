@@ -1,0 +1,17 @@
+provider:
+  name: aws
+  runtime: nodejs16.x
+  region: ap-south-1
+service: zyxware-redmine
+functions:
+  zyxwareRedmine:
+    handler: index.handler
+    events:
+      - http:
+          path: /
+          method: ANY
+          cors: true
+      - http:
+          path: /{proxy+}
+          method: ANY
+          cors: true
