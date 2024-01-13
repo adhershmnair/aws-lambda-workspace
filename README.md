@@ -29,13 +29,8 @@ Create a certificate.
 
 aws apigateway create-domain-name \
     --domain-name domain.com \
-    --certificate-arn your-acm-certificate-arn \
+    --certificate-arn arn:aws:acm:us-east-1:certicate-number-from-amazon-acm \
     --security-policy TLS_1_2
 
-
-aws apigateway create-base-path-mapping \
-    --domain-name domain.com \
-    --base-path / \
-    --rest-api-id your-api-id \
-    --stage your-stage
-
+Goto API Mapping Service and configure custom domain mapping.
+Then add a CNAME record in DNS.
